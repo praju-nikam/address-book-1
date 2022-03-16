@@ -22,20 +22,20 @@ public class AddressBook {
                     // Add new Contact
                     addressBook.addNewContacts();
                     break;
-//                case 2:
-//                    // Edit  Contact
-//                    addressBook.editContacts();
-//                    break;
+                case 2:
+                    // Edit  Contact
+                    addressBook.editContacts();
+                    break;
 //
 //                case 3:
 //                    // Delete  Contact
 //                    addressBook.deleteContacts();
 //                    break;
 //
-//                case 4:
-//                    // Display  Contact
-//                    addressBook.displayContacts();
-//                    break;
+                case 4:
+                    // Display  Contact
+                    addressBook.displayContacts();
+                    break;
 
                 default:
                     System.out.println("Please Enter the Option 1 to 4");
@@ -93,7 +93,38 @@ public class AddressBook {
         }
     }
 
+    // Edit the Existing Contacts
+    public  void editContacts()
+    {
+        // First name to Edit the Contact
+        System.out.println("Enter the First Name : ");
+        String firstName = scanner.next();
 
+        // check the user with First name
+        if(! firstName.equalsIgnoreCase(contact.getFirstName()))
+        {
+            System.out.println("\n Entered Contact Name is Not Available in Address Book ");
+        }
+        else
+        {
+            System.out.println("Enter the First Name : ");
+            contact.setFirstName(scanner.next());
+            System.out.println("Enter the Last Name : ");
+            contact.setLastName(scanner.next());
+            System.out.println("Enter the Address : ");
+            contact.setAddress(scanner.next());
+            System.out.println("Enter the city : ");
+            contact.setCity(scanner.next());
+            System.out.println("Enter the State : ");
+            contact.setState(scanner.next());
+            System.out.println("Enter the Zip Code : ");
+            contact.setZip(scanner.next());
+            System.out.println("Enter the Phone Number : ");
+            contact.setPhoneNo(scanner.next());
+            System.out.println("Enter the Email Id : ");
+            contact.setEmailId(scanner.next());
+        }
+    }
 
 
 }
