@@ -1,19 +1,30 @@
-
-//contact.java
-
 package com.java.bridgelabs;
 
-public class Contact
-{
-    String firstName;
-    String lastName;
-    String address;
-    String city;
-    String state;
-    String zip;
-    String phoneNo;
-    String emailId;
+public class ContactPerson {
 
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String city;
+    private String state;
+    private int zipCode;
+    private long phoneNumber;
+    private String emailId;
+
+    ContactPerson(String firstName, String lastName, String address, String city, String state, int zipCode, long phoneNumber, String emailId){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+        this.emailId = emailId;
+    }
+
+    public ContactPerson(){
+        this("","","","","",0,0,"");
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -54,20 +65,20 @@ public class Contact
         this.state = state;
     }
 
-    public String getZip() {
-        return zip;
+    public int getZipCode() {
+        return zipCode;
     }
 
-    public void setZip(String zip) {
-        this.zip = zip;
+    public void setZip(int zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    public long getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setPhoneNumber(long phone_number) {
+        this.phoneNumber = phone_number;
     }
 
     public String getEmailId() {
@@ -78,4 +89,10 @@ public class Contact
         this.emailId = emailId;
     }
 
+    public String toString(){
+
+        return "Person Details :  \tFirst name : "+this.firstName+ " \t Last name : "+this.lastName+
+                " \t Address : " +this.address+ " \tCity : " +this.city+ " \t State : "
+                +this.state+ " \tZipCode : " +this.zipCode+ " \tPhone Number : " +this.phoneNumber+ " \t Email Id : "+this.emailId;
+    }
 }
