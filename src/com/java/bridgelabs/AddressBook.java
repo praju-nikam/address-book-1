@@ -26,12 +26,12 @@ public class AddressBook {
                     // Edit  Contact
                     addressBook.editContacts();
                     break;
-//
-//                case 3:
-//                    // Delete  Contact
-//                    addressBook.deleteContacts();
-//                    break;
-//
+
+                case 3:
+                    // Delete  Contact
+                    addressBook.deleteContacts();
+                    break;
+
                 case 4:
                     // Display  Contact
                     addressBook.displayContacts();
@@ -126,5 +126,27 @@ public class AddressBook {
         }
     }
 
+    //  Delete the user Contact with First Name
+    public void deleteContacts()
+    {
+        // get first Name to Delete the Contacts
+        System.out.println("Enter the First Name : ");
+        String firstName = scanner.next();
+        if(! firstName.equalsIgnoreCase(contact.getFirstName()))
+        {
+            System.out.println("Entered Contact Name is Not Available");
+        }
+        else
+        {
+            contact.setFirstName(null);
+            contact.setLastName(null);
+            contact.setAddress(null);
+            contact.setCity(null);
+            contact.setState(null);
+            contact.setZip(null);
+            contact.setPhoneNo(null);
+            contact.setEmailId(null);
 
+        }
+    }
 }
